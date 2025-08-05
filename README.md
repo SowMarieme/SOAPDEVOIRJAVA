@@ -5,51 +5,9 @@ Ce projet est une application Java EE fournissant des Web Services SOAP pour gé
 Le backend utilise Hibernate pour la persistance, et JAX-WS pour exposer les services.
 
 ### Architecture de notre projet:
-mysoapapp/                      <-- racine du projet Maven
-├─ pom.xml                 <-- fichier Maven (build + dépendances)
-├─ src
-│  ├─ main
-│  │  ├─ java
-│  │  │  └─ com
-│  │  │     └─ mysoapapp
-│  │  │        ├─ metier
-│  │  │        │   ├─ dao
-│  │  │        │   │   ├─ ISectorDao.java
-│  │  │        │   │   ├─ SectorDao.java
-│  │  │        │   │   ├─ IClassesDao.java
-│  │  │        │   │   ├─ ClassesDao.java
-│  │  │        │   │   └─ HibernateUtil.java
-│  │  │        │   ├─ dto
-│  │  │        │   │   ├─ SectorDto.java
-│  │  │        │   │   └─ ClassesDto.java
-│  │  │        │   ├─ entity
-│  │  │        │   │   ├─ SectorEntity.java
-│  │  │        │   │   └─ ClassesEntity.java
-│  │  │        │   ├─ mapper
-│  │  │        │   │   ├─ SectorMapper.java
-│  │  │        │   │   └─ ClassesMapper.java
-│  │  │        │   └─ service
-│  │  │        │       ├─ ISectorService.java
-│  │  │        │       ├─ SectorService.java
-│  │  │        │       ├─ IClassesService.java
-│  │  │        │       └─ ClassesService.java
-│  │  │        └─ mysoapapp
-│  │  │            └─ webservice
-│  │  │                └─ service
-│  │  │                    ├─ SectorWebService.java
-│  │  │                    ├─ SectorWebServiceImpl.java
-│  │  │                    ├─ ClassesWebService.java
-│  │  │                    └─ ClassesWebServiceImpl.java
-│  │  ├─ resources
-│  │  │  
-│  │  │   
-│  │  └─ webapp
-│  │      ├─ index.html             <-- page d’accueil + liens wsdl
-│  │      └─ WEB-INF
-│  │          ├─ web.xml             <-- config servlet, listeners SOAP
-│  │          └─ ─ sun-jaxws.xml   <-- configuration endpoints SOAP
-└─                     
+![img_3.png](img_3.png)
 
+![img_4.png](img_4.png)
 
 ## 2.Objectifs
 * Implémenter un CRUD complet via SOAP pour deux entités métier : Sector et Classes
@@ -76,6 +34,8 @@ web.xml configure le servlet JAX-WS et le listener :
 * Les clients peuvent accéder aux WSDL via des URL exposées par le serveur (ex : /sectorWebService?wsdl).
 * Le sun-jaxws.xml déclare plusieurs endpoints, chacun lié à une classe d’implémentation.
 * Le servlet WSServlet dans web.xml route les requêtes SOAP vers les services déclarés.
+![img_5.png](img_5.png)
+![img_6.png](img_6.png)
 ![img_2.png](img_2.png)
 
 ## 5.Etapes de création
@@ -88,7 +48,7 @@ web.xml configure le servlet JAX-WS et le listener :
 7. Configuration du déploiement via web.xml (listener + servlet JAX-WS).
 8. Tests et vérification des WSDLs accessibles via navigateur.
 
-# 6. Fichiers clés
+## 6. Fichiers clés
 * sun-jaxws.xml : déclare tous les endpoints SOAP avec leurs URL patterns.
 * web.xml : configure le listener et le servlet JAX-WS.
 * database.properties : configuration base de données.
@@ -98,6 +58,9 @@ On va juste prendre l'exemple d'une classe
 * SectorService.java : service métier.
 * SectorDao.java : DAO Hibernate.
 
+## 8.Tests
+![img_7.png](img_7.png)
+![img_8.png](img_8.png)
 ## 7.Conclusion
 Cette architecture permet une évolution simple avec ajout progressif de nouveaux services SOAP.
 L’usage de Hibernate garantit la gestion fiable de la persistance.

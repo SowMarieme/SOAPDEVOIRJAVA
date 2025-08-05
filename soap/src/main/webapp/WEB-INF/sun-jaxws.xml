@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <endpoints xmlns="http://java.sun.com/xml/ns/jax-ws/ri/runtime" version="2.0">
-    <endpoint
-            implementation="com.mysoapapp.soap.webservice.service.SectorWebServiceImpl"
-            name="SectorWebService"
-            url-pattern="/sectorWebService" />
+<!--    <endpoint-->
+<!--&lt;!&ndash;            implementation="com.mysoapapp.soap.webservice.service.SectorWebServiceImpl"&ndash;&gt;-->
+<!--&lt;!&ndash;            name="SectorWebService"&ndash;&gt;-->
+<!--&lt;!&ndash;            url-pattern="/sectorWebService" />&ndash;&gt;-->
 
     <endpoint
             implementation="com.mysoapapp.soap.webservice.service.ClassesWebServiceImpl"
-            name="SectorWebService"
+            name="ClassesWebService"
             url-pattern="/classesWebService" />
-
-
 </endpoints>
-

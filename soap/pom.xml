@@ -12,31 +12,16 @@
     <name>soap</name>
     <url>http://maven.apache.org</url>
 
-    <!-- BOM pour gérer automatiquement les versions -->
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>com.sun.xml.ws</groupId>
-                <artifactId>jaxws-ri-bom</artifactId>
-                <version>4.0.0</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
-
     <dependencies>
 
+        <!-- ✅ JAX-WS compatible Jakarta (pour Tomcat 10) -->
         <dependency>
             <groupId>com.sun.xml.ws</groupId>
-            <artifactId>servlet</artifactId>
-            <version>4.0.1</version>
+            <artifactId>jaxws-rt</artifactId>
+            <version>4.0.0</version>
         </dependency>
 
-
-
-
-        <!-- JAXB -->
+        <!-- ✅ JAXB Jakarta API + impl (3.x pour compatibilité Jakarta) -->
         <dependency>
             <groupId>jakarta.xml.bind</groupId>
             <artifactId>jakarta.xml.bind-api</artifactId>
@@ -45,23 +30,17 @@
         <dependency>
             <groupId>org.glassfish.jaxb</groupId>
             <artifactId>jaxb-runtime</artifactId>
-            <version>2.3.9</version>
+            <version>3.0.2</version>
         </dependency>
 
-        <!-- JSTL -->
+        <!-- ✅ JSTL -->
         <dependency>
             <groupId>jakarta.servlet.jsp.jstl</groupId>
             <artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
             <version>2.0.0</version>
         </dependency>
-        <dependency>
-            <groupId>org.glassfish.jaxb</groupId>
-            <artifactId>jaxb-runtime</artifactId>
-            <version>3.0.2</version>
-        </dependency>
 
-
-        <!-- Jakarta Servlet API -->
+        <!-- ✅ Jakarta Servlet API -->
         <dependency>
             <groupId>jakarta.servlet</groupId>
             <artifactId>jakarta.servlet-api</artifactId>
@@ -69,19 +48,20 @@
             <scope>provided</scope>
         </dependency>
 
-        <!-- JWS Annotations -->
+        <!-- ✅ Jakarta JWS Annotations -->
         <dependency>
             <groupId>jakarta.jws</groupId>
             <artifactId>jakarta.jws-api</artifactId>
             <version>3.0.0</version>
         </dependency>
 
-        <!-- Projet metier local -->
+        <!-- ✅ Projet métier local -->
         <dependency>
             <groupId>com.mysoapapp</groupId>
             <artifactId>metier</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
+
     </dependencies>
 
     <build>

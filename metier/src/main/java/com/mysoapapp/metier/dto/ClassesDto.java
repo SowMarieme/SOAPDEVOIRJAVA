@@ -1,12 +1,27 @@
 package com.mysoapapp.metier.dto;
 
-public class ClassesDto {
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+
+import jakarta.xml.bind.annotation.XmlRootElement;
+import java.io.Serializable;
+
+@XmlRootElement(name = "ClassesDto")  // Requis pour le marshalling SOAP
+@XmlAccessorType(XmlAccessType.FIELD) // Rend les @XmlElement inutiles sur chaque champ
+public class ClassesDto implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+
     private Long id;
     private String className;
     private String description;
-    private Long sectorId;  // juste l'id du secteur lié
+    private Long sectorId;
 
-    // getters et setters
+    public ClassesDto() {
+        // Constructeur sans argument requis par JAXB
+    }
+
+    // Getters et Setters
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
 
