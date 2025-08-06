@@ -66,3 +66,8 @@ Cette architecture permet une évolution simple avec ajout progressif de nouveau
 L’usage de Hibernate garantit la gestion fiable de la persistance.
 La configuration via sun-jaxws.xml facilite la gestion centralisée des endpoints SOAP.
 
+#### Accéder à l’interface sur :
+   ```
+   http://localhost:8080/soap/
+   ![img_9.png](img_9.png)
+   ```
