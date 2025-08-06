@@ -69,5 +69,6 @@ La configuration via sun-jaxws.xml facilite la gestion centralisée des endpoint
 #### Accéder à l’interface sur :
    ```
    http://localhost:8080/soap/
-   ![img_9.png](img_9.png)
+  
    ```
+![img_9.png](img_9.png)
